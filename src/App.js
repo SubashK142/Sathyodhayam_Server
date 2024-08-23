@@ -12,31 +12,31 @@ import VoiceList from './Voice/manage_voice';
 function App() {
   const router= createBrowserRouter([
     {
-      path: '/',
+      path: 'sathyodhayam_server/',
       element: <Home/>
     },
     {
-      path: '/newsfeed',
+      path: 'sathyodhayam_server/newsfeed',
       element: <SubmitNewsFeed/>
     },
     {
-      path:'/managenewsfeed',
+      path:'sathyodhayam_server/managenewsfeed',
       element:<FeedsList/>
     },
     {
-      path:'/voice',
+      path:'sathyodhayam_server/voice',
       element:<SubmitVoice/>
     },
     {
-      path:'/meditation',
+      path:'sathyodhayam_server/meditation',
       element:<SubmitMeditation/>
     },
     {
-      path:'/managemeditation',
+      path:'sathyodhayam_server/managemeditation',
       element:<MeditationList/>
     },
     {
-      path:'/managevoice',
+      path:'sathyodhayam_server/managevoice',
       element:<VoiceList/>
     }
   ])
