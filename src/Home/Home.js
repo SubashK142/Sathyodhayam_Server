@@ -17,27 +17,27 @@ const ThreeColumnLayout = () => {
 
         <div style={styles.column}>
           <h2 style={styles.heading}>New Data</h2>
-          <Link to='/newsfeed'>
+          <Link to='sathyodhayam_server/newsfeed'>
             <button style={styles.button}>Add New Data in News_feeds</button>
           </Link>
-          <Link to='/voice'>
+          <Link to='sathyodhayam_server/voice'>
           <button style={styles.buttonLink}>Add New Data in voice_masterji</button>
           </Link>
 
-          <Link to='/meditation'>
+          <Link to='sathyodhayam_server/meditation'>
           <button style={styles.buttonLink}>Add New Data in Mediation</button>
           </Link>
         </div>
 
         <div style={styles.column}>
           <h2 style={styles.heading}>Manage Data</h2>
-          <Link to='/managenewsfeed'>
+          <Link to='sathyodhayam_server/managenewsfeed'>
             <button style={styles.button}>Manage data in News_feeds</button>
           </Link>
-          <Link to='/managevoice'>
+          <Link to='sathyodhayam_server/managevoice'>
           <button style={styles.buttonLink}>Manage data in voice_masterji</button>
           </Link>
-          <Link to='/managemeditation'>
+          <Link to='sathyodhayam_server/managemeditation'>
           <button  style={styles.buttonLink}>Manage Data in Mediation</button>
           </Link>
         </div>

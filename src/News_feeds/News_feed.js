@@ -107,7 +107,7 @@ const SubmitNewsFeed = () => {
         </div>
         <button type="submit" style={styles.button}>Submit</button>
       </form>
-      <Link to ='/managenewsfeed'><button style={styles.link}>View All Articles</button></Link>
+      <Link to ='sathyodhayam_server/managenewsfeed'><button style={styles.link}>View All Articles</button></Link>
     </div>
   );
 };
