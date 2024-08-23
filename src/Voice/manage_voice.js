@@ -55,7 +55,7 @@ const VoiceList = () => {
 
   return (
     <div className="feeds-container">
-      <h1>Feeds List</h1>
+      <h1>Voice List</h1>
       <table className="feeds-table">
         <thead>
           <tr>

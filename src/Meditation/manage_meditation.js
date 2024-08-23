@@ -55,7 +55,7 @@ const MeditationList = () => {
 
   return (
     <div className="feeds-container">
-      <h1>Feeds List</h1>
+      <h1>Meditation List</h1>
       <table className="feeds-table">
         <thead>
           <tr>

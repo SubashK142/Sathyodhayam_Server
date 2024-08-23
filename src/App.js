@@ -58,12 +58,16 @@ import SubmitVoice from './Voice/Voice';
 import SubmitMeditation from './Meditation/meditation';
 import MeditationList from './Meditation/manage_meditation';
 import VoiceList from './Voice/manage_voice';
+import SubmitUsers from './Users/Users';
+import UsersList from './Users/Manage_users';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/users" element={<SubmitUsers />} />
+        <Route path="/manageusers" element={<UsersList />} />
         <Route path="/newsfeed" element={<SubmitNewsFeed />} />
         <Route path="/managenewsfeed" element={<FeedsList />} />
         <Route path="/voice" element={<SubmitVoice />} />

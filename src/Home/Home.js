@@ -10,35 +10,42 @@ const ThreeColumnLayout = () => {
       <div style={styles.columnContainer}>
         <div style={styles.column}>
           <h2 style={styles.heading}>Tables</h2>
-          <button style={styles.button}>News_feeds</button>
-          <button style={styles.button}>Voice</button>
-          <button style={styles.button}>Mediation</button>
+          <button style={styles.buttonLink}>Users</button>
+          <button style={styles.buttonLink}>News_feeds</button>
+          <button style={styles.buttonLink}>Voice</button>
+          <button style={styles.buttonLink}>Mediation</button>
         </div>
 
         <div style={styles.column}>
           <h2 style={styles.heading}>New Data</h2>
-          <Link to='/newsfeed'>
+          <Link to='/users' style={{textDecoration:'none'}}>
+            <button style={styles.button}>Add New Data in Users</button>
+          </Link>
+          <Link to='/newsfeed' style={{textDecoration:'none'}}>
             <button style={styles.button}>Add New Data in News_feeds</button>
           </Link>
-          <Link to='/voice'>
-          <button style={styles.buttonLink}>Add New Data in voice_masterji</button>
+          <Link to='/voice' style={{textDecoration:'none'}}>
+          <button style={styles.button}>Add New Data in voice_masterji</button>
           </Link>
 
-          <Link to='/meditation'>
-          <button style={styles.buttonLink}>Add New Data in Mediation</button>
+          <Link style={{textDecoration:'none'}} to='/meditation'>
+          <button style={styles.button}  >Add New Data in Mediation</button>
           </Link>
         </div>
 
         <div style={styles.column}>
           <h2 style={styles.heading}>Manage Data</h2>
-          <Link to='/managenewsfeed'>
+          <Link to='/manageusers' style={{textDecoration:'none'}}>
+            <button style={styles.button}>Manage data in Users</button>
+          </Link>
+          <Link to='/managenewsfeed' style={{textDecoration:'none'}}>
             <button style={styles.button}>Manage data in News_feeds</button>
           </Link>
-          <Link to='/managevoice'>
-          <button style={styles.buttonLink}>Manage data in voice_masterji</button>
+          <Link to='/managevoice' style={{textDecoration:'none'}}>
+          <button style={styles.button}>Manage data in voice_masterji</button>
           </Link>
-          <Link to='/managemeditation'>
-          <button  style={styles.buttonLink}>Manage Data in Mediation</button>
+          <Link to='/managemeditation' style={{textDecoration:'none'}}>
+          <button  style={styles.button}>Manage Data in Mediation</button>
           </Link>
         </div>
       </div>
@@ -92,16 +99,19 @@ const styles = {
     cursor: 'pointer',
     textAlign: 'center',
     transition: 'background-color 0.3s ease',
+    
   },
   buttonLink: {
-    display: 'block',
+   display: 'block',
     width: '100%',
     padding: '10px',
     marginBottom: '10px',
-    textDecoration: 'none',
-    backgroundColor: '#007bff',
-    color: '#fff',
+    border: 'none',
     borderRadius: '5px',
+    backgroundColor: 'orange',
+    color: '#fff',
+    fontSize: '16px',
+    cursor: 'pointer',
     textAlign: 'center',
     transition: 'background-color 0.3s ease',
   },
