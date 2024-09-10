@@ -1,16 +1,15 @@
-// SubmitNewsFeed.js
 import React, { useState } from 'react';
 import { addDoc, collection } from '@firebase/firestore';
 import { db } from '../Firebase/firebase';  // Import the Firestore instance
-import './news_feed.css'
+import '../News_feeds/news_feed.css';
 import { Link } from 'react-router-dom';
 
-const SubmitNewsFeed = () => {
+const SubmitJabam = () => {
   const [formData, setFormData] = useState({
+    image_link: '',
     title: '',
-    date: '',
-    image: '',
-    paragraph: '',
+    time: '',
+    music_Link: '',
   });
 
   const handleChange = (e) => {
@@ -24,26 +23,38 @@ const SubmitNewsFeed = () => {
     e.preventDefault();
 
     try {
-      const newsFeedCollection = collection(db, "news_feeds");  // Reference to your Firestore collection
-      await addDoc(newsFeedCollection, formData);  // Add the document to Firestore
+      const voiceCollection = collection(db, "jabam");  // Reference to your Firestore collection
+      await addDoc(voiceCollection, formData);  // Add the document to Firestore
 
-      alert('News submitted successfully!');
+      alert('new jabam submitted successfully!');
       setFormData({
+        image_link: '',
         title: '',
-        date: '',
-        image: '',
-        paragraph: ''
+        time: '',
+        music_Link: '',
       });
     } catch (error) {
       console.error('Error:', error);
-      alert('An error occurred while submitting the article.');
+      alert('An error occurred while submitting the voice.');
     }
   };
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.header}>Submit News Feed Details</h1>
+      <h1 style={styles.header}>Jabam Details</h1>
       <form onSubmit={handleSubmit} style={styles.form}>
+        <div style={styles.formGroup}>
+          <label htmlFor="image_link" style={styles.label}>Image Link:</label>
+          <input
+            type="text"
+            id="image_link"
+            name="image_link"
+            value={formData.image_link}
+            onChange={handleChange}
+            required
+            style={styles.input}
+          />
+        </div>
         <div style={styles.formGroup}>
           <label htmlFor="title" style={styles.label}>Title:</label>
           <input
@@ -57,43 +68,32 @@ const SubmitNewsFeed = () => {
           />
         </div>
         <div style={styles.formGroup}>
-          <label htmlFor="date" style={styles.label}>Date:</label>
+          <label htmlFor="time" style={styles.label}>Time (in minutes):</label>
           <input
-            type="date"
-            id="date"
-            name="date"
-            value={formData.date}
+            type="number"
+            id="time"
+            name="time"
+            value={formData.time}
             onChange={handleChange}
             required
             style={styles.input}
           />
         </div>
         <div style={styles.formGroup}>
-          <label htmlFor="image" style={styles.label}>Image (URL):</label>
+          <label htmlFor="music_Link" style={styles.label}>Music Link:</label>
           <input
             type="text"
-            id="image"
-            name="image"
-            value={formData.image}
+            id="music_Link"
+            name="music_Link"
+            value={formData.music_Link}
             onChange={handleChange}
             required
             style={styles.input}
-          />
-        </div>
-        <div style={styles.formGroup}>
-          <label htmlFor="paragraph" style={styles.label}>Paragraph:</label>
-          <textarea
-            id="paragraph"
-            name="paragraph"
-            value={formData.paragraph}
-            onChange={handleChange}
-            required
-            style={styles.textarea}
           />
         </div>
         <button type="submit" style={styles.button}>Submit</button>
       </form>
-      <Link to ='/managenewsfeed'><button style={styles.link}>View All Records</button></Link>
+      <Link to='/managejabam'><button style={styles.link}>View All Records</button></Link>
     </div>
   );
 };
@@ -134,15 +134,6 @@ const styles = {
     borderRadius: '5px',
     boxSizing: 'border-box',
   },
-  textarea: {
-    width: 'calc(100% - 20px)',
-    padding: '4px',
-    border: '1px solid #ddd',
-    borderRadius: '5px',
-    boxSizing: 'border-box',
-    resize: 'vertical',
-    height: '100px',
-  },
   button: {
     width: '100%',
     padding: '10px',
@@ -169,4 +160,4 @@ const styles = {
   }
 };
 
-export default SubmitNewsFeed;
+export default SubmitJabam;

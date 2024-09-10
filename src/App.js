@@ -60,6 +60,10 @@ import MeditationList from './Meditation/manage_meditation';
 import VoiceList from './Voice/manage_voice';
 import SubmitUsers from './Users/Users';
 import UsersList from './Users/Manage_users';
+import SubmitSlideshow from './Slideshow/Slideshow';
+import SlideshowList from './Slideshow/Manage_Slideshow';
+import SubmitJabam from './Jabam/Jabam';
+import JabamList from './Jabam/Manage_jabam';
 
 function App() {
   return (
@@ -71,9 +75,13 @@ function App() {
         <Route path="/newsfeed" element={<SubmitNewsFeed />} />
         <Route path="/managenewsfeed" element={<FeedsList />} />
         <Route path="/voice" element={<SubmitVoice />} />
+        <Route path="/slideshow" element={<SubmitSlideshow />} />
+        <Route path="/jabam" element={<SubmitJabam />} />
         <Route path="/meditation" element={<SubmitMeditation />} />
         <Route path="/managemeditation" element={<MeditationList />} />
         <Route path="/managevoice" element={<VoiceList />} />
+        <Route path="/manageslideshow" element={<SlideshowList />} />
+        <Route path="/managejabam" element={<JabamList />} />
       </Routes>
     </Router>
   );

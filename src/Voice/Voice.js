@@ -9,6 +9,7 @@ const SubmitVoice = () => {
     sub_title: '',
     image: '',
     audio: '',
+    time: '',
     paragraph: '',
   });
 
@@ -80,6 +81,18 @@ const SubmitVoice = () => {
           />
         </div>
         <div style={styles.formGroup}>
+          <label htmlFor="time" style={styles.label}>Time (in minutes):</label>
+          <input
+            type="number"
+            id="time"
+            name="time"
+            value={formData.time}
+            onChange={handleChange}
+            required
+            style={styles.input}
+          />
+        </div>
+        <div style={styles.formGroup}>
           <label htmlFor="paragraph" style={styles.label}>Paragraph:</label>
           <textarea
             id="paragraph"
@@ -92,7 +105,7 @@ const SubmitVoice = () => {
         </div>
         <button type="submit" style={styles.button}>Submit</button>
       </form>
-      <Link to='/managevoice'><button style={styles.link}>View All Articles</button></Link>
+      <Link to='/managevoice'><button style={styles.link}>View All Records</button></Link>
     </div>
   );
 };

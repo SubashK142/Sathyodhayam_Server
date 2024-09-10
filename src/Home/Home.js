@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import JabamList from './../Jabam/Manage_jabam';
 
 const ThreeColumnLayout = () => {
   return (
@@ -14,6 +15,8 @@ const ThreeColumnLayout = () => {
           <button style={styles.buttonLink}>News_feeds</button>
           <button style={styles.buttonLink}>Voice</button>
           <button style={styles.buttonLink}>Mediation</button>
+          <button style={styles.buttonLink}>Slideshow</button>
+          <button style={styles.buttonLink}>Jabam</button>
         </div>
 
         <div style={styles.column}>
@@ -31,6 +34,13 @@ const ThreeColumnLayout = () => {
           <Link style={{textDecoration:'none'}} to='/meditation'>
           <button style={styles.button}  >Add New Data in Mediation</button>
           </Link>
+
+          <Link style={{textDecoration:'none'}} to='/slideshow'>
+          <button style={styles.button}  >Add New Data in slideshow</button>
+          </Link>
+          <Link style={{textDecoration:'none'}} to='/jabam'>
+          <button style={styles.button}  >Add New Data in Jabam</button>
+          </Link>
         </div>
 
         <div style={styles.column}>
@@ -46,6 +56,14 @@ const ThreeColumnLayout = () => {
           </Link>
           <Link to='/managemeditation' style={{textDecoration:'none'}}>
           <button  style={styles.button}>Manage Data in Mediation</button>
+          </Link>
+
+          <Link to='/manageslideshow' style={{textDecoration:'none'}}>
+          <button  style={styles.button}>Manage Data in Slideshow</button>
+          </Link>
+
+          <Link to='/managejabam' style={{textDecoration:'none'}}>
+          <button  style={styles.button}>Manage Data in JabamList</button>
           </Link>
         </div>
       </div>

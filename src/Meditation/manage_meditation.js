@@ -60,7 +60,6 @@ const MeditationList = () => {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Thumbnail</th>
             <th>Video Link</th>
             <th>Actions</th>
           </tr>
@@ -69,7 +68,6 @@ const MeditationList = () => {
           {feeds.map(feed => (
             <tr key={feed.id}>
               <td>{feed.id}</td>
-              <td><img src={feed.thumbnail} alt="Thumbnail" width="100" /></td>
               <td><a href={feed.video_link} target="_blank" rel="noopener noreferrer">Watch Video</a></td>
               <td>
                 <button className="edit-btn" onClick={() => handleEdit(feed)}>Edit</button>
@@ -85,16 +83,6 @@ const MeditationList = () => {
           <div className="popup-form">
             <h2>Edit Feed</h2>
             <form onSubmit={handleUpdate}>
-              <div className="form-group">
-                <label htmlFor="thumbnail">Thumbnail URL:</label>
-                <input
-                  type="text"
-                  id="thumbnail"
-                  value={editingFeed.thumbnail}
-                  onChange={(e) => setEditingFeed({ ...editingFeed, thumbnail: e.target.value })}
-                  required
-                />
-              </div>
               <div className="form-group">
                 <label htmlFor="video_link">Video Link:</label>
                 <input
