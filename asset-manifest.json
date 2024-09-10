@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sathyodhayam_server/static/css/main.dace9b9b.css",
-    "main.js": "/sathyodhayam_server/static/js/main.efe7c4d6.js",
+    "main.css": "/sathyodhayam_server/static/css/main.2c3d5765.css",
+    "main.js": "/sathyodhayam_server/static/js/main.8fa4f414.js",
     "static/js/453.0ddd9f3b.chunk.js": "/sathyodhayam_server/static/js/453.0ddd9f3b.chunk.js",
     "index.html": "/sathyodhayam_server/index.html",
-    "main.dace9b9b.css.map": "/sathyodhayam_server/static/css/main.dace9b9b.css.map",
-    "main.efe7c4d6.js.map": "/sathyodhayam_server/static/js/main.efe7c4d6.js.map",
+    "main.2c3d5765.css.map": "/sathyodhayam_server/static/css/main.2c3d5765.css.map",
+    "main.8fa4f414.js.map": "/sathyodhayam_server/static/js/main.8fa4f414.js.map",
     "453.0ddd9f3b.chunk.js.map": "/sathyodhayam_server/static/js/453.0ddd9f3b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dace9b9b.css",
-    "static/js/main.efe7c4d6.js"
+    "static/css/main.2c3d5765.css",
+    "static/js/main.8fa4f414.js"
   ]
 }
