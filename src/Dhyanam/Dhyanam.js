@@ -6,10 +6,8 @@ import { storage } from '../Firebase/firebase';
 import '../News_feeds/news_feed.css';
 import { Link } from 'react-router-dom';
 
-const SubmitJabam = () => {
+const SubmitDhyanam = () => {
   const [formData, setFormData] = useState({
-    image_link: '',
-    title: '',
     time: '',
     music_File: null,
   });
@@ -52,18 +50,14 @@ const SubmitJabam = () => {
             const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
 
             // Now submit the form data along with the MP3 file URL to Firestore
-            const jabamCollection = collection(db, 'jabam');
+            const jabamCollection = collection(db, 'dhyanam');
             await addDoc(jabamCollection, {
-              image_link: formData.image_link,
-              title: formData.title,
               time: formData.time,
               music_Link: downloadURL,  // Store the MP3 file URL in Firestore
             });
 
-            alert('New jabam submitted successfully!');
+            alert('New dhyanam submitted successfully!');
             setFormData({
-              image_link: '',
-              title: '',
               time: '',
               music_File: null,
             });
@@ -72,7 +66,7 @@ const SubmitJabam = () => {
         );
       } catch (error) {
         console.error('Error:', error);
-        alert('An error occurred while submitting the jabam.');
+        alert('An error occurred while submitting the dhyanam.');
       }
     } else {
       alert('Please select an MP3 file');
@@ -81,43 +75,24 @@ const SubmitJabam = () => {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.header}>Jabam Details</h1>
+      <h1 style={styles.header}>Dhyanam Details</h1>
       <form onSubmit={handleSubmit} style={styles.form}>
-        <div style={styles.formGroup}>
-          <label htmlFor="image_link" style={styles.label}>Image Link:</label>
-          <input
-            type="text"
-            id="image_link"
-            name="image_link"
-            value={formData.image_link}
-            onChange={handleChange}
-            required
-            style={styles.input}
-          />
-        </div>
-        <div style={styles.formGroup}>
-          <label htmlFor="title" style={styles.label}>Title:</label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            required
-            style={styles.input}
-          />
-        </div>
+        
         <div style={styles.formGroup}>
           <label htmlFor="time" style={styles.label}>Time (in minutes):</label>
-          <input
-            type="number"
+          <select
             id="time"
             name="time"
             value={formData.time}
             onChange={handleChange}
             required
             style={styles.input}
-          />
+          >
+            <option value="">Select Time</option>
+            <option value="9">9 minutes</option>
+            <option value="13">13 minutes</option>
+            <option value="19">19 minutes</option>
+          </select>
         </div>
         <div style={styles.formGroup}>
           <label htmlFor="music_File" style={styles.label}>Upload MP3:</label>
@@ -138,7 +113,7 @@ const SubmitJabam = () => {
         )}
         <button type="submit" style={styles.button}>Submit</button>
       </form>
-      <Link to='/managejabam'><button style={styles.link}>View All Records</button></Link>
+      <Link to='/managedhyanam'><button style={styles.link}>View All Records</button></Link>
     </div>
   );
 };
@@ -209,4 +184,4 @@ const styles = {
   },
 };
 
-export default SubmitJabam;
+export default SubmitDhyanam;

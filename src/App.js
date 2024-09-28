@@ -64,6 +64,8 @@ import SubmitSlideshow from './Slideshow/Slideshow';
 import SlideshowList from './Slideshow/Manage_Slideshow';
 import SubmitJabam from './Jabam/Jabam';
 import JabamList from './Jabam/Manage_jabam';
+import SubmitDhyanam from './Dhyanam/Dhyanam';
+import DhyanamList from './Dhyanam/Manage_Dhyanam';
 
 function App() {
   return (
@@ -77,11 +79,14 @@ function App() {
         <Route path="/voice" element={<SubmitVoice />} />
         <Route path="/slideshow" element={<SubmitSlideshow />} />
         <Route path="/jabam" element={<SubmitJabam />} />
+        <Route path="/dhyanam" element={<SubmitDhyanam />} />
         <Route path="/meditation" element={<SubmitMeditation />} />
         <Route path="/managemeditation" element={<MeditationList />} />
         <Route path="/managevoice" element={<VoiceList />} />
         <Route path="/manageslideshow" element={<SlideshowList />} />
         <Route path="/managejabam" element={<JabamList />} />
+        <Route path="/managedhyanam" element={< DhyanamList/>} />
+        
       </Routes>
     </Router>
   );
