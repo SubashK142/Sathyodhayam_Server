@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/sathyodhayam_server/static/css/main.dace9b9b.css",
-    "main.js": "/sathyodhayam_server/static/js/main.32ea3b60.js",
+    "main.js": "/sathyodhayam_server/static/js/main.87e67e87.js",
     "static/js/453.0ddd9f3b.chunk.js": "/sathyodhayam_server/static/js/453.0ddd9f3b.chunk.js",
     "index.html": "/sathyodhayam_server/index.html",
     "main.dace9b9b.css.map": "/sathyodhayam_server/static/css/main.dace9b9b.css.map",
-    "main.32ea3b60.js.map": "/sathyodhayam_server/static/js/main.32ea3b60.js.map",
+    "main.87e67e87.js.map": "/sathyodhayam_server/static/js/main.87e67e87.js.map",
     "453.0ddd9f3b.chunk.js.map": "/sathyodhayam_server/static/js/453.0ddd9f3b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dace9b9b.css",
-    "static/js/main.32ea3b60.js"
+    "static/js/main.87e67e87.js"
   ]
 }
