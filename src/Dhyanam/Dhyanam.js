@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 const SubmitDhyanam = () => {
   const [formData, setFormData] = useState({
+    title: '',
     time: '',
     music_File: null,
   });
@@ -46,18 +47,19 @@ const SubmitDhyanam = () => {
             alert('Error uploading MP3 file');
           },
           async () => {
-            // Upload completed, get the download URL
             const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
 
             // Now submit the form data along with the MP3 file URL to Firestore
             const jabamCollection = collection(db, 'dhyanam');
             await addDoc(jabamCollection, {
+              title: formData.title,
               time: formData.time,
               music_Link: downloadURL,  // Store the MP3 file URL in Firestore
             });
 
-            alert('New dhyanam submitted successfully!');
+            alert('New Dhyanam submitted successfully!');
             setFormData({
+              title: '',
               time: '',
               music_File: null,
             });
@@ -66,7 +68,7 @@ const SubmitDhyanam = () => {
         );
       } catch (error) {
         console.error('Error:', error);
-        alert('An error occurred while submitting the dhyanam.');
+        alert('An error occurred while submitting the jabam.');
       }
     } else {
       alert('Please select an MP3 file');
@@ -77,7 +79,18 @@ const SubmitDhyanam = () => {
     <div style={styles.container}>
       <h1 style={styles.header}>Dhyanam Details</h1>
       <form onSubmit={handleSubmit} style={styles.form}>
-        
+        <div style={styles.formGroup}>
+          <label htmlFor="title" style={styles.label}>Title:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            required
+            style={styles.input}
+          />
+        </div>
         <div style={styles.formGroup}>
           <label htmlFor="time" style={styles.label}>Time (in minutes):</label>
           <select
